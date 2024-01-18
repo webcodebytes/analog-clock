@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #d1dae3;
+  font-family: "Quicksand", sans-serif;
+}
+
+.container {
+  position: relative;
+}
+
+.clock {
+  width: 375px;
+  height: 375px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px;
+  position: relative;
+  color: #07141b;
+  box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 0.06),
+    inset 0em -1.2em 1.2em rgba(255, 255, 255, 0.06),
+    0em 1.2em 1.2em rgba(0, 0, 0, 0.3), inset 0em 1.2em 1.2em rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.clock:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #1a74be;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+  position: absolute;
+}
+
+.clock .hour,
+.hr {
+  width: 160px;
+  height: 160px;
+}
+
+.clock .min,
+.mn {
+  width: 190px;
+  height: 190px;
+}
+
+.clock .sec,
+.sc {
+  width: 230px;
+  height: 230px;
+}
+
+.hr,
+.mn,
+.sc {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hr:before {
+  content: "";
+  position: absolute;
+  width: 7.5px;
+  height: 80px;
+  background: #f16528;
+  z-index: 10;
+  border-radius: 2.8px;
+}
+
+.mn:before {
+  content: "";
+  position: absolute;
+  width: 3.5px;
+  height: 100px;
+  background: #091921;
+  z-index: 11;
+  border-radius: 3px;
+}
+
+.sc:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: #2e77c7;
+  z-index: 12;
+  border-radius: 3px;
+}
+
+.hour-mark {
+  position: absolute;
+  transform: rotate(calc(30deg * var(--index)));
+  inset: 12px;
+  text-align: center;
+}
